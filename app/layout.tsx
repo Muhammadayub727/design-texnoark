@@ -3,6 +3,7 @@ import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '../components/header/page'
 import Footer from '../components/footer/page'
+import { Client, HydrationProvider } from "react-hydration-provider";
 
 
 export const metadata: Metadata = {
@@ -18,12 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-[#F0F0F0]">
-      <Header/>
-       <main>
-        {children}
-       </main>
-      <Footer/>
-        </body>
-    </html>
+         <HydrationProvider>
+            <Client>
+               <Header />
+               <main>{children}</main>
+               <Footer />
+            </Client>
+         </HydrationProvider>
+      </body>
+  </html>
   );
 }
