@@ -1,0 +1,11 @@
+.auth_btn:hover{
+    background: #D55200 !important;
+    color: white !important;
+    border: #D55200 !important;
+}
+
+.auth_btn2:hover{
+    background: #F0F0F0 !important;
+    color: black !important;
+    border: #F0F0F0 !important;
+}

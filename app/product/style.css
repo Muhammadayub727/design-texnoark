@@ -1,0 +1,81 @@
+.image-gallery-icon {
+    height: 40px !important;  /* Set the height of the navigation buttons */
+    width: 40px !important; /* Optional: Set the width if needed */
+  }
+.image-gallery-right-nav{
+    height: 40px !important;  /* Set the height of the navigation buttons */
+    width: 40px !important; /* Optional: Set the width if needed */
+}
+.image-gallery-left-nav{
+    height: 40px !important;  /* Set the height of the navigation buttons */
+    width: 40px !important; /* Optional: Set the width if needed */
+}
+
+
+.single_btn{
+    width: 250px;
+    height: 54px;
+    text-align: center;
+    color: white;
+    border: 1px solid #D55200;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    background: #D55200;
+}
+
+.single_btn:hover{
+    border: 1px solid #D55200 !important;
+    color: white !important;
+    background: #D55200 !important;
+}
+
+.single_btn2{
+    width: 250px;
+    height: 54px;
+    text-align: center;
+    color: white;
+    border: 1px solid #1EB91E;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    background: #1EB91E;
+}
+
+.single_btn2:hover{
+    border: 1px solid #1EB91E !important;
+    color: white !important;
+    background: #1EB91E !important;
+}
+
+
+.carousel {
+    height: 525px;
+    background: white;
+    position: relative;
+  }
+
+
+  .product-carousel .slick-prev,
+  .product-carousel .slick-next {
+    color: rgb(5, 133, 2); /* Change to your desired color */
+    font-size: 44px !important; /* Change to your desired size */
+    z-index: 1; /* Ensure the arrows are above other elements */
+  }
+  
+  
+  .product-carousel .slick-prev:before,
+  .product-carousel .slick-next:before {
+    font-size: 44px !important; /* Change the icon size */
+    color: rgb(5, 133, 2); /* Change the arrow icon color */
+  }
+  
+  .product-carousel .slick-prev {
+    left: 10px; /* Adjust the position if necessary */
+  }
+  
+  .product-carousel .slick-next {
+    right: 10px; /* Adjust the position if necessary */
+  } 

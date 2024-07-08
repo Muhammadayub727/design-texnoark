@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.btn_all{
+    width: 160px;
+    height: 46px;
+    text-align: center;
+    color: #1EB91E;
+    border: 1px solid #1EB91E;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.btn_all:hover{
+    border: 1px solid #1EB91E !important;
+    color: #1EB91E !important;
+}
+
+
+body{
+    overflow-x: hidden;
+}

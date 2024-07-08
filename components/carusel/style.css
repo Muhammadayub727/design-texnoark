@@ -1,0 +1,28 @@
+.carousel {
+    max-height: 400px;
+    background: white;
+    position: relative;
+  }
+
+
+  .custom-carousel .slick-prev,
+  .custom-carousel .slick-next {
+    color: rgb(5, 133, 2); /* Change to your desired color */
+    font-size: 44px !important; /* Change to your desired size */
+    z-index: 1; /* Ensure the arrows are above other elements */
+  }
+  
+  
+  .custom-carousel .slick-prev:before,
+  .custom-carousel .slick-next:before {
+    font-size: 44px !important; /* Change the icon size */
+    color: rgb(5, 133, 2); /* Change the arrow icon color */
+  }
+  
+  .custom-carousel .slick-prev {
+    left: 10px; /* Adjust the position if necessary */
+  }
+  
+  .custom-carousel .slick-next {
+    right: 10px; /* Adjust the position if necessary */
+  } 
