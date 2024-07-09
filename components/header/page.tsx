@@ -29,8 +29,8 @@ import ChangYutgich from "@/assets/chang_yutgich.svg";
 import Muzlatgich from "@/assets/muzlatgich.svg";
 import { getAccessToken } from "@/helpers/auth-helpers";
 import Link from "next/link";
-import SubMenu from "antd/es/menu/SubMenu";
-import Icon from "@ant-design/icons/lib/components/Icon";
+// import SubMenu from "antd/es/menu/SubMenu";
+// import Icon from "@ant-design/icons/lib/components/Icon";
 import { useRouter } from "next/navigation";
 import useLikeStore from "@/store/likes/page";
 import useProductStore from "@/store/products/page";
@@ -118,6 +118,7 @@ function Index() {
   );
 
   return (
+    // @ts-ignore
     <header>
       <div className="py-[10px] bg-[#F0F0F0] max-lg:hidden">
         <Container>
@@ -152,7 +153,7 @@ function Index() {
 
       <div>
         <Container>
-          <div className="py-[30px] px-[60px] flex justify-between bg-[white] rounded-md relative max-lg:px-4 duration-300">
+          <div className="py-[30px] px-[60px] flex justify-between bg-[white]  rounded-md relative max-lg:px-4 duration-300">
             <Link href={"/"}>
               <Image
                 className="ml-[30px]"
@@ -233,12 +234,14 @@ function Index() {
             </div>
             <div className="flex items-center gap-[15px]">
               <Badge className=" max-lg:hidden" count={count}>
-                <Avatar
-                  shape="square"
-                  size="large"
-                  className="bg-[#F0F0F0] cursor-pointer"
-                  icon={<HeartOutlined className="text-[#240E00]" />}
-                />
+                <Link href={"/likes"}>
+                  <Avatar
+                    shape="square"
+                    size="large"
+                    className="bg-[#F0F0F0] cursor-pointer"
+                    icon={<HeartOutlined className="text-[#240E00]" />}
+                  />
+                </Link>
               </Badge>
               <Badge >
                 <Avatar
@@ -250,12 +253,14 @@ function Index() {
                 </Avatar>
               </Badge>
               <Badge className=" max-lg:hidden" count={countCarts}>
-                <Avatar
-                  shape="square"
-                  size="large"
-                  className="bg-[#F0F0F0] cursor-pointer"
-                  icon={<ShoppingCartOutlined className="text-[#240E00]" />}
-                />
+                <Link href={"/card"}>
+                  <Avatar
+                    shape="square"
+                    size="large"
+                    className="bg-[#F0F0F0] cursor-pointer"
+                    icon={<ShoppingCartOutlined className="text-[#240E00]" />}
+                  />
+                </Link>
               </Badge>
               <Dropdown overlay={menu} trigger={['click']}>
                 <Avatar

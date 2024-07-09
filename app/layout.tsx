@@ -30,3 +30,12 @@ export default function RootLayout({
   </html>
   );
 }
+
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      header: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    }
+  }
+}

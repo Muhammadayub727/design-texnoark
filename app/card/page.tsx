@@ -30,7 +30,7 @@ export default function page() {
                 Home
                 </span>
                 <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
-                Savat
+                Cart
                 </span>
             </p>
             </Container>
