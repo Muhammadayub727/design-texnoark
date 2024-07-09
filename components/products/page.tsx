@@ -1,5 +1,5 @@
 import {
-  ArrowRightOutlined,
+  ShoppingCartOutlined,
   BarChartOutlined,
   HeartOutlined,
 } from "@ant-design/icons";
@@ -57,7 +57,7 @@ function page({datas}:any) {
         </Link>
         <div className="flex max-sm:flex-col items-center justify-between gap-[10px]">
           <Button onClick={() => handleCartSubmit(datas.id)} className="btn_product max-sm:w-[100%]">
-            Savat <ArrowRightOutlined />
+            Cart <ShoppingCartOutlined />
           </Button>
          <div className="flex item-center gap-[10px]">
          <Badge>
