@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../container/page";
 import Image from "next/image";
 import LOGO from "../../assets/LOGO.png";
-import { Button, Input, Avatar, Badge, Drawer, Menu } from "antd";
+import { Button, Input, Avatar, Badge, Drawer, Menu, Dropdown } from "antd";
 import {
   ArrowRightOutlined,
   BarChartOutlined,
@@ -28,7 +28,6 @@ import PC from "@/assets/pc.svg";
 import ChangYutgich from "@/assets/chang_yutgich.svg";
 import Muzlatgich from "@/assets/muzlatgich.svg";
 import { getAccessToken } from "@/helpers/auth-helpers";
-import { useState } from "react";
 import Link from "next/link";
 import SubMenu from "antd/es/menu/SubMenu";
 import Icon from "@ant-design/icons/lib/components/Icon";
@@ -39,8 +38,8 @@ import Cookies from "js-cookie";
 import useCartsStore from "@/store/card/page";
 
 function Index() {
-  const router = useRouter()
-  const [accessToken, setAccessTokenn]:any = useState();
+  const router = useRouter();
+  const [accessToken, setAccessTokenn] :any = useState(null);
   const [openKeys, setOpenKeys] = useState<string[]>(["1"]);
   const [open, setOpen] = useState(false);
   const { categories, getCategories } = useCategoryStore();
@@ -58,8 +57,8 @@ function Index() {
   ];
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
-  const {count, getLikes} = useLikeStore()
-  const {countCarts, getCards} = useCartsStore()
+  const { count, getLikes } = useLikeStore();
+  const { countCarts, getCards } = useCartsStore();
 
   async function getSub(e: any) {
     setcategory(e.name);
@@ -87,35 +86,52 @@ function Index() {
     setOpenCategory(false);
   };
 
-
-  const {getProducts} = useProductStore()
+  const { getProducts } = useProductStore();
 
   useEffect(() => {
     const token = getAccessToken();
     setAccessTokenn(token);
     getCategories();
-    getProducts()
-    const id = Number(Cookies.get('id'))
-    getLikes({id})
-    getCards({id})
+    getProducts();
+    const id = Number(Cookies.get("id"));
+    getLikes({ id });
+    getCards({ id });
   }, []);
+
+  const menu = (
+    <Menu>
+      <Menu.Item key="1">
+        <Link href="/login">
+          <Button className="dropdown_btn bg-[#D55200] w-[100%] text-white text-[14px] font-bold py-[10px] px-[36px] h-[36px]">
+            Login
+          </Button>
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link href="/profile">
+          <Button className="dropdown_btn bg-[#D55200] w-[100%] text-white text-[14px] font-bold py-[10px] px-[36px] h-[36px]">
+            Profile
+          </Button>
+        </Link>
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <header>
       <div className="py-[10px] bg-[#F0F0F0] max-lg:hidden">
         <Container>
           <div className="flex justify-between items-center">
             <ul className="flex items-center gap-[20px]">
+              <li className="text-[14px] font-medium cursor-pointer">About</li>
               <li className="text-[14px] font-medium cursor-pointer">
-                About
+                Delivery
               </li>
               <li className="text-[14px] font-medium cursor-pointer">
-              Delivery
+                Terms of the contract
               </li>
               <li className="text-[14px] font-medium cursor-pointer">
-              Terms of the contract
-              </li>
-              <li className="text-[14px] font-medium cursor-pointer">
-              Our guarantees
+                Our guarantees
               </li>
             </ul>
             <ul className="flex items-center gap-[15px]">
@@ -174,7 +190,7 @@ function Index() {
               } drawer`}
             >
               <div>
-                {categories.map((e:any, i:any) => {
+                {categories.map((e: any, i: any) => {
                   return (
                     <div
                       key={i}
@@ -198,7 +214,7 @@ function Index() {
               </div>
               <div className="mt-[7px] border-l-[1px] pl-[60px]">
                 <p className="text-[27px] font-bold mb-[20px]">{category}</p>
-                {subcategories?.map((e:any, i:number) => {
+                {subcategories?.map((e: any, i: number) => {
                   return (
                     <Link
                       key={i}
@@ -221,156 +237,85 @@ function Index() {
                   shape="square"
                   size="large"
                   className="bg-[#F0F0F0] cursor-pointer"
-                  onClick={() => router.push('/likes')}
-                >
-                  <HeartOutlined className="text-[20px] text-[black]" />
-                </Avatar>
+                  icon={<HeartOutlined className="text-[#240E00]" />}
+                />
               </Badge>
-              <Badge className=" max-lg:hidden">
+              <Badge className=" max-lg:hidden" count={countCarts}>
                 <Avatar
                   shape="square"
                   size="large"
                   className="bg-[#F0F0F0] cursor-pointer"
-                >
-                  <BarChartOutlined className="text-[20px] text-[black]" />
-                </Avatar>
+                  icon={<ShoppingCartOutlined className="text-[#240E00]" />}
+                />
               </Badge>
-              <Link href={"/card"} className=" max-lg:hidden">
-                <Badge count={countCarts}>
-                  <Avatar
-                    shape="square"
-                    size="large"
-                    className="bg-[#F0F0F0] cursor-pointer"
-                  >
-                    <ShoppingCartOutlined className="text-[20px] text-[black]" />
-                  </Avatar>
-                </Badge>
-              </Link>
-              <MenuOutlined
-                onClick={() => showDrawer()}
-                className=" max-lg:block hidden cursor-pointer text-[24px] pr-[20px]"
-              />
-               {accessToken ? (
-        <Avatar
-          size="large"
-          icon={<UserOutlined className="text-[20px] text-[black]" />}
-          className="bg-[#F0F0F0] cursor-pointer max-lg:hidden"
-          onClick={() => router.push('/profile')}
-        />
-      ) : (
-        <Button onClick={() => router.push('/login')} className="login_btn bg-[#1EB91E] w-[100%] text-white text-[14px] font-bold py-[15px] px-[36px] h-[46px]">
-          Kirish
-        </Button>
-      )}
+              <Dropdown overlay={menu} trigger={['click']}>
+                <Avatar
+                  shape="square"
+                  size="large"
+                  className="bg-[#F0F0F0] cursor-pointer"
+                  icon={<UserOutlined className="text-[#240E00]" />}
+                />
+              </Dropdown>
+              <div className="hidden max-lg:flex items-center">
+                <Avatar
+                  onClick={showDrawer}
+                  shape="square"
+                  size="large"
+                  className="bg-[#F0F0F0] cursor-pointer"
+                  icon={<MenuOutlined className="text-[#240E00]" />}
+                />
+                <Drawer
+                  placement="left"
+                  closable={false}
+                  onClose={onClose}
+                  open={openDrawer}
+                  key="left"
+                  width={400}
+                  className="p-0"
+                >
+                  <div className="flex flex-col h-full justify-between">
+                    <div>
+                      <div className="bg-[#F0F0F0] flex items-center justify-center py-[20px]">
+                        <Avatar
+                          onClick={onClose}
+                          shape="square"
+                          size="large"
+                          className="bg-[#F0F0F0] cursor-pointer"
+                          icon={<CloseSquareOutlined className="text-[#240E00]" />}
+                        />
+                      </div>
+                      <ul className="bg-[#F0F0F0] flex flex-col py-[20px] items-start">
+                        <li className="text-[14px] font-medium cursor-pointer py-[10px] px-[20px]">
+                          About
+                        </li>
+                        <li className="text-[14px] font-medium cursor-pointer py-[10px] px-[20px]">
+                          Delivery
+                        </li>
+                        <li className="text-[14px] font-medium cursor-pointer py-[10px] px-[20px]">
+                          Terms of the contract
+                        </li>
+                        <li className="text-[14px] font-medium cursor-pointer py-[10px] px-[20px]">
+                          Our guarantees
+                        </li>
+                      </ul>
+                    </div>
+                    <ul className="flex items-center gap-[15px] justify-center py-[20px]">
+                      <li className="text-[14px] font-medium">+998 71 300 30 30</li>
+                      <li className="px-[10px] py-[4px] bg-[white] rounded-lg cursor-pointer font-medium text-[#240E0066]">
+                        Rus
+                      </li>
+                      <li className="px-[10px] py-[4px] bg-[white] rounded-lg cursor-pointer font-medium text-[#240E0066]">
+                        Ozb
+                      </li>
+                      <li className="px-[10px] py-[4px] bg-[white] rounded-lg cursor-pointer font-medium text-[#240E0066]">
+                        Eng
+                      </li>
+                    </ul>
+                  </div>
+                </Drawer>
+              </div>
             </div>
           </div>
-
-          <div className="max-sm:block hidden duration-300 px-[20px]">
-            <Button
-              onClick={() => showCategory()}
-              className="category_btn bg-[#1EB91E] w-[100%] text-white text-[14px] font-bold py-[15px] px-[36px] h-[46px]"
-            >
-              {open ? (
-                <CloseSquareOutlined className=" text-[18px]" />
-              ) : (
-                <UnorderedListOutlined className=" text-[18px] rotate-180" />
-              )}
-              {open ? "Bekor qilish" : "Kategoriya"}
-            </Button>
-            <Input
-              placeholder="Хочу купить..."
-              className="search_inputt mt-[5px]"
-              prefix={<SearchOutlined />}
-            />
-          </div>
-
-          <Drawer title="Menu" width={300} onClose={onClose} open={openDrawer}>
-            <div className="flex items-center gap-[15px]">
-              <Badge count={2}>
-                <Avatar
-                  shape="square"
-                  size="large"
-                  className="bg-[#F0F0F0] cursor-pointer"
-                >
-                  <HeartOutlined className="text-[20px] text-[black]" />
-                </Avatar>
-              </Badge>
-              <Badge count={6}>
-                <Avatar
-                  shape="square"
-                  size="large"
-                  className="bg-[#F0F0F0] cursor-pointer"
-                >
-                  <BarChartOutlined className="text-[20px] text-[black]" />
-                </Avatar>
-              </Badge>
-              <Link href={"/card"}>
-                <Badge count={7}>
-                  <Avatar
-                    shape="square"
-                    size="large"
-                    className="bg-[#F0F0F0] cursor-pointer"
-                  >
-                    <ShoppingCartOutlined className="text-[20px] text-[black]" />
-                  </Avatar>
-                </Badge>
-              </Link>
-              {getAccessToken() ? (
-                <Link href={"profile"}>
-                  <Avatar
-                    size="large"
-                    icon={<UserOutlined className="text-[20px] text-[black]" />}
-                    className="bg-[#F0F0F0] cursor-pointer"
-                  />
-                </Link>
-              ) : (
-                <Link href={"/login"}>
-                  <Button className="font-bold block">Kirish</Button>
-                </Link>
-              )}
-            </div>
-            <div className="mt-[20px]">
-              <p className="text-[18px] font-medium">Biz haqimizda:</p>
-              <p className="text-[18px] font-medium">Yetkazib berish:</p>
-            </div>
-          </Drawer>
-
-          <Drawer
-            placement="left"
-            title="Category"
-            width={300}
-            onClose={onCategory}
-            open={openCategory}
-          >
-            <Menu
-              mode="inline"
-              style={{ height: "100%", borderRight: 0 }}
-              defaultSelectedKeys={["11"]}
-              openKeys={openKeys} 
-              onOpenChange={(keys) => setOpenKeys(keys.slice(-1))} 
-            >
-              {categories?.map((category: any, index: number) => {
-                return (
-                  <SubMenu
-                    key={category.id}
-                    title={
-                      <span onClick={() => getSubCategories(category.id)}>
-                        <Icon type="appstore" />
-                        {category.name}
-                      </span>
-                    }
-                  >
-                    {subcategories?.map((subcat: any, subIndex: number) => (
-                      <Menu.Item key={subIndex}>
-                        <Link href={`/categories`}>{subcat.name}</Link>
-                      </Menu.Item>
-                    ))}
-                  </SubMenu>
-                );
-              })}
-            </Menu>
-            ;
-          </Drawer>
         </Container>
       </div>
     </header>
