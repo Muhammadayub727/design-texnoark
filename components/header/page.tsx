@@ -240,6 +240,15 @@ function Index() {
                   icon={<HeartOutlined className="text-[#240E00]" />}
                 />
               </Badge>
+              <Badge >
+                <Avatar
+                  shape="square"
+                  size="large"
+                  className="bg-[#F0F0F0] cursor-pointer"
+                >
+                  <BarChartOutlined className="text-[20px] text-[black]" />
+                </Avatar>
+              </Badge>
               <Badge className=" max-lg:hidden" count={countCarts}>
                 <Avatar
                   shape="square"
