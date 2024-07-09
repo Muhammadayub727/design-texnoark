@@ -45,7 +45,7 @@ function page() {
       <Container>
         <p className="flex gap-[20px] mt-[20px]">
           <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
-            Bosh sahifa
+            Home
           </span>
           <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
             Smartfonlar

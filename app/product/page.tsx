@@ -1,4 +1,8 @@
 "use client"
+import {
+  ShoppingOutlined,
+  ShoppingCartOutlined 
+} from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import Container from "../../components/container/page";
 import ImageGallery from "react-image-gallery";
@@ -71,13 +75,13 @@ function Product() {
             <Container>
               <p className="flex gap-[10px] mt-[20px]">
                 <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
-                  Bosh sahifa
+                  Home
                 </span>
                 <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
-                  Smartfonlar
+                  Smartphones
                 </span>
                 <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
-                  Apple iPhone 13 128Gb Moviy
+                  Apple iPhone 13 128Gb Blue
                 </span>
               </p>
             </Container>
@@ -103,7 +107,7 @@ function Product() {
                   </h3>
                   <div className="flex items-center gap-[12px]">
                     <p className="text-[16px] text-[#240E00CC] font-medium mr-3">
-                      Rang:
+                      Color:
                     </p>
                     <div className="w-[24px] h-[24px] bg-[#9747FF] rounded-full cursor-pointer"></div>
                     <div className="w-[24px] h-[24px] bg-[#3472ED] rounded-full cursor-pointer"></div>
@@ -112,36 +116,36 @@ function Product() {
                     <div className="w-[24px] h-[24px] bg-[#FEDACB] rounded-full cursor-pointer"></div>
                   </div>
                   <p className="text-[16px] text-[#240E00CC] font-medium mr-3 mt-[42px] mb-[36px]">
-                    Narx:{" "}
+                    Price:{" "}
                     <span className="text-[28px] font-bold text-[#240E00CC]">
-                      {product?.price} so‘m
+                      {product?.price} soums
                     </span>
                   </p>
                   <p className="mb-[8px] py-[16px] px-[32px] text-[16px] font-medium text-[#240E00CC] bg-[#F0F0F0] rounded-md">
-                    Oyiga {Math.ceil(product?.price / 12)} so‘mdan 12/oyga muddatli to ‘lov
+                  Per Month {Math.ceil(product?.price / 12)} 12 monthly installments from soums
                   </p>
                   <div className="flex justify-between mb-[40px]">
-                    <Button className="single_btn">Savatga qo ‘shish</Button>
-                    <Button className="single_btn2">Xarid qilish</Button>
+                    <Button className="single_btn">Add to cart <ShoppingCartOutlined/></Button>
+                    <Button className="single_btn2">Shopping<ShoppingOutlined/></Button>
                   </div>
 
                   <div className="flex flex-col gap-[20px]">
                     <div className="flex items-center gap-[16px]">
                       <Image src={Car} alt="Car Logo" />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
-                        Yetkazib berish O’zbekiston bo’ylab
+                      Delivery throughout Uzbekistan
                       </p>
                     </div>
                     <div className="flex items-center gap-[16px]">
                       <Image src={Shop} alt="Car Logo" />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
-                        Do’kondi o’zidan olib ketishingiz mumkin
+                      You can take the store away
                       </p>
                     </div>
                     <div className="flex items-center gap-[16px]">
                       <Image src={Time} alt="Car Logo" />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
-                        Tahminiy yetkazib berish 1 kundan 3 kungacha
+                        TDelivery is 1 to 3 days
                       </p>
                     </div>
                   </div>
@@ -160,7 +164,7 @@ function Product() {
                       : "bg-white text-[black] duration-300"
                   } py-[14px] px-[32px] rounded-[10px font-semibold rounded-[10px]`}
                 >
-                  Telfon xususiyatlari
+                  Phone features
                 </button>
                 <button
                   onClick={() => setcommets("Mijozlarni fikri")}
@@ -170,7 +174,7 @@ function Product() {
                       : "bg-white text-[black] duration-300"
                   } py-[14px] px-[32px] rounded-[10px font-semibold rounded-[10px]`}
                 >
-                  Mijozlarni fikri
+                  Customer opinion
                 </button>
               </div>
             </Container>
@@ -184,15 +188,15 @@ function Product() {
                     <div className="py-[60px] px-[80px] max-sm:px-[10px]">
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Brend
+                          Brand
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Vivo
+                          Apple 13
                         </p>
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          CIM kartalar soni
+                        Number of CIM cards
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
                           2
@@ -200,7 +204,7 @@ function Product() {
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          O’lchamlari
+                          Size
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
                           75,09х155,11х8,28
@@ -208,15 +212,15 @@ function Product() {
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Modeli
+                          Model
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Redmi T12
+                          Iphone 13 Pro
                         </p>
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Akumulyator hajmi
+                        Battery capacity
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
                           4000 amp
@@ -224,7 +228,7 @@ function Product() {
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Yadrolar soni
+                        The number of cores
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
                           8
@@ -232,7 +236,7 @@ function Product() {
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Tezkor xotira RAM
+                        Fast memory RAM
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
                           6 GB
@@ -240,7 +244,7 @@ function Product() {
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Ichki xotira ROM
+                        Internal memory ROM
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
                           128 GB
@@ -248,22 +252,22 @@ function Product() {
                       </div>
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Protsessori
+                        Processor
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          MediaTek Helio P35 (MT6765)
+                          Iphone 13 pro T[7390]
                         </p>
                       </div>
                     </div>
                   ) : (
                     <div>
                       <div className="mt-[40px]">
-                       <Form onFinish={(value) => handleSubmit(value)}>
+                      <Form onFinish={(value) => handleSubmit(value)}>
                             <ProFormTextArea
-                              placeholder={'Comentariya qoldiring'}
+                              placeholder={'Leave a comment'}
                               name={'comment'}
                             />
-                            <Button htmlType="submit" className="single_btn" style={{width: '120px', display: 'flex'}}>Yuborish</Button>
+                            <Button htmlType="submit" className="single_btn" style={{width: '120px', display: 'flex'}}>Sending</Button>
                        </Form>
                       </div>
                       <div className="flex flex-col gap-[20px] mt-[40px] mb-[50px]">
@@ -303,7 +307,7 @@ function Product() {
 
       <div className="mt-[120px]">
         <Container>
-          <h1 className='font-bold text-[32px] mb-[24px] max-sm:text-[20px]'>Aksiyadagi mahsulotlar</h1>
+          <h1 className='font-bold text-[32px] mb-[24px] max-sm:text-[20px]'>Products on sale</h1>
           <Swiper data={products}/>
         </Container>
       </div>
