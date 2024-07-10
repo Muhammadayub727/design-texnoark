@@ -8,7 +8,7 @@ const useProductStore = create<request_products>((set) => ({
         try {
             const response = await http.get("/products/search");
             set({ products: response?.data?.data?.products });
-            // console.log(response.data.data.products); // Bu yerda to'g'ri ob'ektga kirish
+            console.log(response.data.data.products);
         } catch (err) {
             console.log(err);
         }

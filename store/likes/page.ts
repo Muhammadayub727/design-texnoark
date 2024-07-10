@@ -10,6 +10,7 @@ const useLikeStore = create <Likes_request> ((set) => ({
             const response = await http.get(`/likes/user/likes/${id}`);
             set({ Likes: response?.data?.data?.likes});
             set({ count: response?.data?.data?.count})
+            // console.log("res",response)
         }catch(err){
             console.log(err);
         }
