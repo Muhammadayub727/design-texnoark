@@ -21,6 +21,7 @@ import { ProFormTextArea } from "@ant-design/pro-components";
 import useCommentStore from "@/store/commets/page";
 import Cookies from "js-cookie";
 import { toast, ToastContainer } from "react-toastify";
+import { Rate } from 'antd';
 
 
 function Product() {
@@ -156,6 +157,7 @@ function Product() {
                         TDelivery is 1 to 3 days
                       </p>
                     </div>
+                    <Rate allowHalf defaultValue={1} />
                   </div>
                 </div>
               </div>

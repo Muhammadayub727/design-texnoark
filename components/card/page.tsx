@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import useLikeStore from '@/store/likes/page';
 import Image from 'next/image';
+import { Rate } from 'antd';
 
 function Page({datas}:any) {
     const [count, setCount] = useState(1);
