@@ -21,13 +21,13 @@ function page() {
     return Promise.reject("Phone Number must start with +998");
   };
 
-  const {Login} = AuthStore();
+  const {signin} = AuthStore();
 
 
   async function handleSubmit(value: any){
-    const response = await Login(value)
+    const response = await signin(value)
     if(response?.status == 201){
-      toast.success('Login successful')
+      toast.success('signin successful')
       console.log(response);
       saveAccessToken(response?.data?.data?.tokens?.access_token)
       Cookies.set('id', response?.data?.data?.data?.id)
@@ -35,7 +35,7 @@ function page() {
         router.push('/')
       }, 3000);
     }else{
-      toast.error('Login Failed')
+      toast.error('signin Failed')
     }
   }
 
@@ -60,7 +60,7 @@ function page() {
         <Container>
           <div className="w-[500px] p-[50px] h-[474px] bg-white rounded-xl mx-auto">
             <h1 className="font-black text-[36px] text-center mb-[36px]">
-              Login
+              signin
             </h1>
             <Form onFinish={(value) => handleSubmit(value)}>
               <div>
@@ -108,7 +108,7 @@ function page() {
                   <Button htmlType="submit" className="auth_btn h-[52px] bg-[#D55200] text-[white] font-medium text-[17px]">
                   Kirish
                 </Button>
-                <Link href={'/register'} className="w-full">
+                <Link href={'/signup'} className="w-full">
                 <Button className="auth_btn2 h-[52px] w-full bg-[#F0F0F0] text-[black] font-medium text-[17px]">
                   Ro'yhatdan o'tish
                 </Button>

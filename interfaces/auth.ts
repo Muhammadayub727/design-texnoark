@@ -1,15 +1,15 @@
-interface Login{
+interface signin{
     phone_number: string
     password: string
 }
 
-interface Register extends Login{
+interface signup extends signin{
     first_name: string
     last_name: string
     email: string
 }
 
 export interface Auth_request{
-    Login: (data:Login) => any
-    Register: (data: Register) => any
+    signin: (data:signin) => any
+    signup: (data: signup) => any
 }

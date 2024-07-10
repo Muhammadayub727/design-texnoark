@@ -18,18 +18,18 @@ function page() {
     return Promise.reject("Phone Number must start with +998");
   };
 
-  const {Register} = AuthStore()
+  const {signup} = AuthStore()
 
 
   async function handleSubmit(value: any){
-    const response = await Register(value)
+    const response = await signup(value)
     if(response?.status == 201){
-      toast.success('Register successful')
+      toast.success('signup successful')
       setTimeout(() => {
-        router.push('/login');
+        router.push('/signin');
       }, 3000);
     }else{
-      toast.error('Register Failed')
+      toast.error('signup Failed')
     }
   }
 
@@ -54,7 +54,7 @@ function page() {
         <Container>
           <div className="w-[500px] p-[50px] bg-white rounded-xl mx-auto">
             <h1 className="font-black text-[36px] text-center mb-[36px]">
-              Login
+              signin
             </h1>
             <Form onFinish={(value) => handleSubmit(value)}>
              <div>
@@ -163,7 +163,7 @@ function page() {
                   <Button htmlType="submit" className="auth_btn h-[52px] bg-[#D55200] text-[white] font-medium text-[17px]">
                   Ro'yhatdan o'tish
                 </Button>
-                <Link href={'/login'} className="w-full">
+                <Link href={'/signin'} className="w-full">
                 <Button className="auth_btn2 h-[52px] w-full bg-[#F0F0F0] text-[black] font-medium text-[17px]">
                   Kirish
                 </Button>

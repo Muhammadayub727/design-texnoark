@@ -27,7 +27,7 @@ function page({ datas }: any) {
       await getCards({ id: Number(Cookies.get('id')) });
       toast.success('Product added to cart successfully');
     } else {
-      toast.error('Product added to cart failed. You need to login.');
+      toast.error('Product added to cart failed. You need to signin.');
     }
   }
 
@@ -38,7 +38,7 @@ function page({ datas }: any) {
       console.log(Cookies.get("id"));
       toast.success('Like successful');
     } else {
-      toast.error('Like failed. You need to login.');
+      toast.error('Like failed. You need to signin.');
     }
   }
 
