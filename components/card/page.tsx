@@ -4,14 +4,14 @@ import './style.css'; // Assuming you have a CSS file for styles
 import useCartsStore from '@/store/card/page';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
-import useLikeStore from '@/store/likes/page';
+import uselikedtore from '@/store/liked/page';
 import Image from 'next/image';
 import { Rate } from 'antd';
 
 function Page({datas}:any) {
     const [count, setCount] = useState(1);
     const {deleteCards, getCards} = useCartsStore()
-    const {postLikes, getLikes} = useLikeStore()
+    const {postliked, getliked} = uselikedtore()
 
     async function handleDelete(id:number){
         const response = await deleteCards({id})
@@ -24,9 +24,9 @@ function Page({datas}:any) {
     }
 
     async function handleLike(id:number){
-        const response = await postLikes({product_id:id})
+        const response = await postliked({product_id:id})
         if(response.status == 201){
-            await getLikes({id: Number(Cookies.get('id'))})
+            await getliked({id: Number(Cookies.get('id'))})
             toast.success('Like successful')
         } else{
             toast.error('Like failed You have need login')

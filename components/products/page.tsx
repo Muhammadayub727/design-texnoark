@@ -7,7 +7,7 @@ import { Avatar, Badge, Button } from "antd";
 import React from "react";
 import "./style.css";
 import Link from "next/link";
-import useLikeStore from "@/store/likes/page";
+import uselikedtore from "@/store/liked/page";
 import { toast } from 'react-toastify';
 import Cookies from "js-cookie";
 import useCartsStore from "@/store/card/page";
@@ -16,7 +16,7 @@ import Image from "next/image";
 
 function page({ datas }: any) {
   const number = Math.ceil(datas.price / 12);
-  const { postLikes, getLikes } = useLikeStore();
+  const { postliked, getliked } = uselikedtore();
   const { postCards, getCards } = useCartsStore();
 
 
@@ -32,9 +32,9 @@ function page({ datas }: any) {
   }
 
   async function handleLikePost(id: number) {
-    const response = await postLikes({ product_id: id });
+    const response = await postliked({ product_id: id });
     if (response.status == 201) {
-      await getLikes({ id: Number(Cookies.get('id')) });
+      await getliked({ id: Number(Cookies.get('id')) });
       console.log(Cookies.get("id"));
       toast.success('Like successful');
     } else {

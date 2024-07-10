@@ -1,4 +1,4 @@
-interface likesData{
+interface likedData{
 
 }
 

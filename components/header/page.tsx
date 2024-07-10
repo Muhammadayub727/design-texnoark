@@ -30,10 +30,11 @@ import Refrigerator from "@/assets/muzlatgich.svg";
 import { getAccessToken } from "@/helpers/auth-helpers";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import useLikeStore from "@/store/likes/page";
+import uselikedtore from "@/store/liked/page";
 import useProductStore from "@/store/products/page";
 import Cookies from "js-cookie";
 import useCartsStore from "@/store/card/page";
+import Texno from "@/assets/T.svg"
 
 function Index() {
   const router = useRouter();
@@ -55,7 +56,7 @@ function Index() {
   ];
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
-  const { count, getLikes } = useLikeStore();
+  const { count, getliked } = uselikedtore();
   const { countCarts, getCards } = useCartsStore();
 
   async function getSub(e: any) {
@@ -92,7 +93,7 @@ function Index() {
     getCategories();
     getProducts();
     const id = Number(Cookies.get("id"));
-    getLikes({ id });
+    getliked({ id });
     getCards({ id });
   }, []);
 
@@ -201,7 +202,7 @@ function Index() {
                       } hover:bg-[#FF6F14] hover:text-white font-semibold mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] rounded-xl cursor-pointer card `}
                     >
                       <Image
-                        src={"https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663219930_12-mykaleidoscope-ru-p-rasteniya-dlya-yaponskogo-sada-krasivo-15.jpg"}
+                        src={Texno}
                         width={100}
                         height={100}
                         alt={e.name}
@@ -234,7 +235,7 @@ function Index() {
             </div>
             <div className="flex items-center gap-[15px]">
               <Badge className=" max-lg:hidden" count={count}>
-                <Link href={"/likes"}>
+                <Link href={"/liked"}>
                   <Avatar
                     shape="square"
                     size="large"

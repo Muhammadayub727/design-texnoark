@@ -2,17 +2,17 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import Container from '@/components/container/page'
-import useLikeStore from '@/store/likes/page'
+import uselikedtore from '@/store/liked/page'
 import Products from '@/components/products/page'
 import Cookies from 'js-cookie'
 
 function page() {
 
-    const {Likes, getLikes} = useLikeStore()
+    const {liked, getliked} = uselikedtore()
     const [data, setData]:any = useState([])
 
-    async function GetLikes(){
-        let arr = Likes?.map((e:any) => {
+    async function Getliked(){
+        let arr = liked?.map((e:any) => {
             return e?.product_id
         }) 
         setData(arr)
@@ -20,8 +20,8 @@ function page() {
     
     useEffect(() => {
         const id = Number(Cookies.get('id'))
-        getLikes({id})
-        GetLikes()      
+        getliked({id})
+        Getliked()      
     }, [])
   return (
     <div>
