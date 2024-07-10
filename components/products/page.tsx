@@ -49,6 +49,8 @@ function page({ datas }: any) {
       <Link onClick={() => Cookies.set('product_id', datas.id)} href={'/product'}>
         <Image
           src={datas.images[0]}
+          width={100}
+          height={100}
           alt="IMG"
           className="w-[150px] h-[160px] mx-auto max-sm:w-[80px] max-sm:h-[80px] max-sm:object-cover bg-transparent"
         />

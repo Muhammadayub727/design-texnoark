@@ -39,7 +39,7 @@ function page() {
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Noutbook va Kompuyetrlar</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Smartfonlar</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Kir yuvish mashinasi</li>
-                        <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Muzlatgichalar</li>
+                        <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Refrigeratoralar</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Kondetsioner</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Pech va Gazpilita</li>
                     </ul>

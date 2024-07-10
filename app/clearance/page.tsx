@@ -223,7 +223,7 @@ function page() {
       
       <div className='mt-[60px]'>
         <Container>
-          <h1 className='font-bold text-[32px] mb-[24px] max-sm:text-[20px]'>Aksiyadagi mahsulotlar</h1>
+          <h1 className='font-bold text-[32px] mb-[24px] max-sm:text-[20px]'>ProductOnSaledagi mahsulotlar</h1>
           <Swiper data={products}/>
         </Container>
       </div>

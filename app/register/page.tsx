@@ -120,7 +120,7 @@ function page() {
               </div>
               <div>
                 <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">
-                  Telefon raqam
+                  Smartphone raqam
                 </p>
                 <ProFormText
                   hasFeedback

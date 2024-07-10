@@ -9,8 +9,8 @@ import Footer_Banner from '../assets/Footer_Banner.png'
 import Swiper from '../components/swiper/page'
 import useCategoryStore from '@/store/categories/page';
 import { useEffect, useState } from 'react';
-import Aksiya from "@/assets/aksiya.svg";
-import Telefon from "@/assets/mobile.svg";
+import ProductOnSale from "@/assets/aksiya.svg";
+import Smartphone from "@/assets/mobile.svg";
 import WashingCard from "@/assets/washing_machine.svg";
 import Desktop from '@/assets/desktop.svg'
 import AirConditioner from '@/assets/konditseoner.svg';
@@ -25,7 +25,7 @@ import Cookies from 'js-cookie';
 
 export default function Home() {
   const {categories, getCategories} = useCategoryStore()
-  const iconCategory = [Aksiya, Telefon, WashingCard, Desktop, AirConditioner]
+  const iconCategory = [ProductOnSale, Smartphone, WashingCard, Desktop, AirConditioner]
   const {products, getProducts} = useProductStore()
   const {getLikes} = useLikeStore()
 

@@ -19,18 +19,16 @@ import {
 import "./style.css";
 import useCategoryStore from "@/store/categories/page";
 import useSubCategoryStore from "@/store/sub-categories/page";
-import Aksiya from "@/assets/aksiya.svg";
-import Telefon from "@/assets/mobile.svg";
+import ProductOnSale from "@/assets/aksiya.svg";
+import Smartphone from "@/assets/mobile.svg";
 import WashingCard from "@/assets/washing_machine.svg";
 import Desktop from "@/assets/desktop.svg";
-import Konditseoner from "@/assets/konditseoner.svg";
+import AirConditioner from "@/assets/konditseoner.svg";
 import PC from "@/assets/pc.svg";
-import ChangYutgich from "@/assets/chang_yutgich.svg";
-import Muzlatgich from "@/assets/muzlatgich.svg";
+import VacuumCleaner from "@/assets/chang_yutgich.svg";
+import Refrigerator from "@/assets/muzlatgich.svg";
 import { getAccessToken } from "@/helpers/auth-helpers";
 import Link from "next/link";
-// import SubMenu from "antd/es/menu/SubMenu";
-// import Icon from "@ant-design/icons/lib/components/Icon";
 import { useRouter } from "next/navigation";
 import useLikeStore from "@/store/likes/page";
 import useProductStore from "@/store/products/page";
@@ -46,14 +44,14 @@ function Index() {
   const { subcategories, getSubCategories } = useSubCategoryStore();
   const [category, setcategory] = useState("");
   const iconCategory = [
-    Aksiya,
-    Telefon,
+    ProductOnSale,
+    Smartphone,
     WashingCard,
     Desktop,
-    Konditseoner,
+    AirConditioner,
     PC,
-    ChangYutgich,
-    Muzlatgich,
+    VacuumCleaner,
+    Refrigerator,
   ];
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
@@ -203,7 +201,9 @@ function Index() {
                       } hover:bg-[#FF6F14] hover:text-white font-semibold mt-[10px] flex items-center justify-between w-[440px] h-[50px] py-[35px] px-[59px] rounded-xl cursor-pointer card `}
                     >
                       <Image
-                        src={iconCategory[i]}
+                        src={"https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663219930_12-mykaleidoscope-ru-p-rasteniya-dlya-yaponskogo-sada-krasivo-15.jpg"}
+                        width={100}
+                        height={100}
                         alt={e.name}
                         className="w-[30px] h-[30px] rasm"
                       />
