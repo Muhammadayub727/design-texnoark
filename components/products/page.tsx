@@ -35,12 +35,13 @@ function page({datas}:any) {
     const response = await postLikes({product_id:id})
     if(response.status == 201){
       await getLikes({id: Number(Cookies.get('id'))})
+      console.log(Cookies.get("id"))
       toast.success('Like successful')
     }else{
       toast.error('Like failed You have need login')
     }
   }
-
+  console.log(Cookies.get("id"))
   return (
     <div className="w-[305px] h-[490px] pt-[50px] pb-[36px] px-[30px] bg-white rounded-xl max-sm:w-[168px] max-sm:h-[320px] max-sm:p-[5px]">
         <Link onClick={() => Cookies.set('product_id', datas.id)} href={'/product'}>
