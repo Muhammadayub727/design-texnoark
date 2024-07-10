@@ -21,7 +21,7 @@ import { ProFormTextArea } from "@ant-design/pro-components";
 import useCommentStore from "@/store/commets/page";
 import Cookies from "js-cookie";
 import { toast, ToastContainer } from "react-toastify";
-import { Rate } from 'antd';
+// import { Image } from "next/image";
 
 
 function Product() {
@@ -62,19 +62,19 @@ function Product() {
   },[])
 
   const renderCustomImage = (item:any) => {
+    console.log(item)
     return (
       <div className="image-gallery-image">
         <Image 
-          src={item.original} 
+          src={item?.original} 
           alt="Product Image" 
-          width={400} 
-          height={560}
-          style={{ maxWidth: '400px', maxHeight: '560px', width: "100%", height: 'auto', margin: '0 auto' }} 
+          width={100}
+          height={100}
+          style={{ maxWidth: '400px', maxHeight: '560px', width: '100%', height: 'auto', margin: '0 auto' }} 
         />
       </div>
     );
   };
-  
   
 
   return (
@@ -140,24 +140,23 @@ function Product() {
 
                   <div className="flex flex-col gap-[20px]">
                     <div className="flex items-center gap-[16px]">
-                    <Image src={Car} alt="Car Logo" width={100} height={100} />
+                      <Image src={Car} alt="Car Logo" />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
                       Delivery throughout Uzbekistan
                       </p>
                     </div>
                     <div className="flex items-center gap-[16px]">
-                    <Image src={Shop} alt="Shop Logo" width={100} height={100} />
+                      <Image src={Shop} alt="Car Logo" />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
                       You can take the store away
                       </p>
                     </div>
                     <div className="flex items-center gap-[16px]">
-                    <Image src={Time} alt="Time Logo" width={100} height={100} />
+                      <Image src={Time} alt="Car Logo" />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
                         TDelivery is 1 to 3 days
                       </p>
                     </div>
-                    <Rate allowHalf defaultValue={1} />
                   </div>
                 </div>
               </div>
@@ -308,7 +307,7 @@ function Product() {
                   )}
                 </div>
                 <div className="w-[520px] h-[542px] p-[50px]">
-                <Image className="w-full" src={Banner3} alt="Banner" width={1920} height={1080} />
+                          <Image className="w-full" src={Banner3} alt="Banner"/>
                 </div>
               </div>
             </Container>
