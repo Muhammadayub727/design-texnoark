@@ -63,10 +63,18 @@ function Product() {
   const renderCustomImage = (item:any) => {
     return (
       <div className="image-gallery-image">
-        <img src={item.original} style={{ maxWidth: '400px', maxHeight: '560px', width: '100%', height: 'auto', margin: '0 auto' }} />
+        <Image 
+          src={item.original} 
+          alt="Product Image" 
+          width={400} 
+          height={560}
+          style={{ maxWidth: '400px', maxHeight: '560px', width: "100%", height: 'auto', margin: '0 auto' }} 
+        />
       </div>
     );
   };
+  
+  
 
   return (
     <>
@@ -131,19 +139,19 @@ function Product() {
 
                   <div className="flex flex-col gap-[20px]">
                     <div className="flex items-center gap-[16px]">
-                      <Image src={Car} alt="Car Logo" />
+                    <Image src={Car} alt="Car Logo" width={100} height={100} />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
                       Delivery throughout Uzbekistan
                       </p>
                     </div>
                     <div className="flex items-center gap-[16px]">
-                      <Image src={Shop} alt="Car Logo" />
+                    <Image src={Shop} alt="Shop Logo" width={100} height={100} />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
                       You can take the store away
                       </p>
                     </div>
                     <div className="flex items-center gap-[16px]">
-                      <Image src={Time} alt="Car Logo" />
+                    <Image src={Time} alt="Time Logo" width={100} height={100} />
                       <p className="text-[18px] font-medium text-[#240E00CC]">
                         TDelivery is 1 to 3 days
                       </p>
@@ -298,7 +306,7 @@ function Product() {
                   )}
                 </div>
                 <div className="w-[520px] h-[542px] p-[50px]">
-                          <Image className="w-full" src={Banner3} alt="Banner"/>
+                <Image className="w-full" src={Banner3} alt="Banner" width={1920} height={1080} />
                 </div>
               </div>
             </Container>

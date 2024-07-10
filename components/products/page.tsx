@@ -11,6 +11,8 @@ import useLikeStore from "@/store/likes/page";
 import {toast} from 'react-toastify'
 import Cookies from "js-cookie";
 import useCartsStore from "@/store/card/page";
+import Image from "next/image";
+
 
 function page({datas}:any) {
   const number = Math.ceil(datas.price / 12)
@@ -42,7 +44,7 @@ function page({datas}:any) {
   return (
     <div className="w-[305px] h-[490px] pt-[50px] pb-[36px] px-[30px] bg-white rounded-xl max-sm:w-[168px] max-sm:h-[320px] max-sm:p-[5px]">
         <Link onClick={() => Cookies.set('product_id', datas.id)} href={'/product'}>
-        <img
+        <Image
           src={datas.images[0]}
           alt="IMG"
           className="w-[150px] h-[160px] mx-auto max-sm:w-[80px] max-sm:h-[80px] max-sm:object-cover bg-transparent"
