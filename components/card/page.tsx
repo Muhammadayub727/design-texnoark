@@ -55,7 +55,7 @@
 //       </div>
 //       <div className='product-actions'>
 //         <div className='action-icons'>
-//           <span className='product-price float-left '>{`${datas?.product_id?.price} so'm`}</span>
+//           <span className='product-price float-left '>{`${datas?.product_id?.price} soums`}</span>
 //           <span onClick={() => handleDelete(datas?.id)} className='action-icon mt-[100px]'><DeleteOutlined className='icon' /></span>
 //           <span onClick={() => handleLike(datas?.product_id?.id)} className='action-icon mt-[100px]'><HeartOutlined className='icon' /></span>
 //         </div>

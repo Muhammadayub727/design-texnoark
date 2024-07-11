@@ -54,7 +54,7 @@ function page() {
               <Form onFinish={(value) => handleSubmit(value)}>
                 <ProFormGroup>
                   <div className="">
-                    <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">Telfon raqam </p>
+                    <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">Phone Number </p>
                   <ProFormText
                     hasFeedback
                     name="phone_number"
@@ -74,7 +74,7 @@ function page() {
                   />
                   </div>
                     <div>
-                    <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">Ism/Familya</p>
+                    <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">FirstName/LastName</p>
                     <ProFormText
                   hasFeedback
                   name="full_name"
@@ -93,8 +93,8 @@ function page() {
                 </ProFormGroup>
                 <ProFormGroup>
                 <Radio.Group defaultValue="1" className="flex flex-col gap-[7px] mt-[12px]">
-                  <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="1">Do’kondan olib ketish .</Radio>
-                  <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="2">Xaridingizni uyingizga yetkazib berish </Radio>
+                  <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="1">take away from the store.</Radio>
+                  <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="2">Delivery of your purchase to your home </Radio>
                 </Radio.Group>
                 </ProFormGroup>
                 <ProFormGroup>
@@ -104,11 +104,11 @@ function page() {
                           { label: 'Toshkent', value: 'toshkent' },
                           { label: 'Sirdaryo', value: 'sirdaryo' },
                         ]}
-                        placeholder="Siz qaysi viloyatdansiz ?"
+                        placeholder="What region are you from?"
                         rules={[
                           {
                             required: true,
-                            message: 'Manzilingizni kiriting!',
+                            message: 'Enter your address!',
                           },
                         ]}
                         fieldProps={{
@@ -121,11 +121,11 @@ function page() {
                           { label: 'Guliston', value: 'guliston' },
                           { label: 'Sergeli', value: 'sergeli' },
                         ]}
-                        placeholder="Siz qaysi tumanidansiz ?"
+                        placeholder="What district are you from ?"
                         rules={[
                           {
                             required: true,
-                            message: 'Manzilingizni kiriting!',
+                            message: 'Enter your address!',
                           },
                         ]}
                         fieldProps={{
@@ -135,11 +135,11 @@ function page() {
                 </ProFormGroup>
                 <ProFormGroup>
                   <div>
-                    <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">Aniq manzilni ; Mahalla/Ko’cha/Uy</p>
+                    <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">The exact address; Neighborhood/Street/House</p>
                   <ProFormText
                     hasFeedback
                     name="address"
-                    placeholder="Tinchlik mahallasi Yoshlik-1 ko’chasi 12-uy"
+                    placeholder="Peace neighborhood, Yoshlik-1 street, 12th house"
                     rules={[
                       {
                         required: true,
