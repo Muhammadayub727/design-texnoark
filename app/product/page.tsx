@@ -21,6 +21,7 @@ import { ProFormTextArea } from "@ant-design/pro-components";
 import useCommentStore from "@/store/commets/page";
 import Cookies from "js-cookie";
 import { toast, ToastContainer } from "react-toastify";
+import Link from "next/link";
 // import { Image } from "next/image";
 
 
@@ -83,12 +84,16 @@ function Product() {
           <div>
             <Container>
               <p className="flex gap-[10px] mt-[20px]">
+                <Link href={"/"}>
                 <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
                   Home
                 </span>
+                </Link>
+                <Link href={"/categories"}>
                 <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
                   Smartphones
                 </span>
+                </Link>
                 <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
                   Apple iPhone 13 128Gb Blue
                 </span>
@@ -279,30 +284,27 @@ function Product() {
                             <Button htmlType="submit" className="single_btn" style={{width: '120px', display: 'flex'}}>Sending</Button>
                        </Form>
                       </div>
-                      <div className="flex flex-col gap-[20px] mt-[40px] mb-[50px]">
-                        {
-                          commets.slice(0,5).map((e:any,i:number) => {
+                      <div className="flex flex-col gap-[20px] mt-[40px] mb-[50px] bg-[#fff]" style={{ overflowY: 'auto', maxHeight: '400px' }}>
+                          {commets.slice(0, 25).map((e: any, i: number) => {
                             return (
                               <div key={i} className="w-[100%] bg-white py-[30px] px-[40px] rounded-xl flex gap-[50px] items-start">
                                 <div className="w-[15%]">
-                                <Tooltip title={`${e?.user_id?.last_name} ${e?.user_id?.first_name}`} placement="top">
-                                <Avatar
-                                    className="w-[60px] h-[60px]"
-                                    style={{ backgroundColor: "#87d068" }}
-                                    icon={<UserOutlined />}
-                                  />
-                                </Tooltip>
+                                  <Tooltip title={`${e?.user_id?.last_name} ${e?.user_id?.first_name}`} placement="top">
+                                    <Avatar
+                                      className="w-[60px] h-[60px]"
+                                      style={{ backgroundColor: "#87d068" }}
+                                      icon={<UserOutlined />}
+                                    />
+                                  </Tooltip>
                                 </div>
-                                <div className="w-[70%}">
+                                <div className="w-[70%]">
                                   <h4 className="font-bold text-[24px] mb-[10px] max-sm:text-[18px]">{e?.user_id?.last_name} {e?.user_id?.first_name}</h4>
                                   <p className="font-medium text-[#240E00CC] text-[16px] max-sm:text-[13px]">{e?.comment}</p>
                                 </div>
                               </div>
-                            )
-                          })
-                        }
-                     
-                      </div>
+                            );
+                          })}
+                        </div>
                     </div>
                   )}
                 </div>
