@@ -20,7 +20,7 @@ function CardComponent({ datas }: any) {
   async function handleDelete(id: number) {
     const response = await deleteCards({ id });
     if (response?.status == 200) {
-      toast.success('Cards deleted successfully');
+      toast.success('Card delete');
       await getCards({ id: Number(Cookies.get('id')) });
     } else {
       toast.error('Cards deletion failed');

@@ -22,6 +22,7 @@ import useCommentStore from "@/store/commets/page";
 import Cookies from "js-cookie";
 import { toast, ToastContainer } from "react-toastify";
 import Link from "next/link";
+import { Rate } from 'antd';
 // import { Image } from "next/image";
 
 
@@ -43,7 +44,9 @@ function Product() {
 
   async function getProductsID() { 
     const product_id = Number(Cookies.get('product_id'));
+    
     const response = await getProductsId({ id: product_id });
+    console.log(response)
     setDetail(response?.data?.data?.product_detail);
     setProduct(response?.data?.data?.product);
   
@@ -135,6 +138,9 @@ function Product() {
                       {product?.price} soums
                     </span>
                   </p>
+                <div className="mb-[10px]">
+                  <Rate />
+                </div>
                   <p className="mb-[8px] py-[16px] px-[32px] text-[16px] font-medium text-[#240E00CC] bg-[#F0F0F0] rounded-md">
                   Per Month {Math.ceil(product?.price / 12)} 12 monthly installments from soums
                   </p>
@@ -269,7 +275,7 @@ function Product() {
                         Processor
                         </p>
                         <p className="w-[300px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">
-                          Iphone 13 pro T[7390]
+                          Iphone 13 pro 
                         </p>
                       </div>
                     </div>
