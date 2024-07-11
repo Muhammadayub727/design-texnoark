@@ -5,6 +5,7 @@ import Swiper from '../../components/swiper/page'
 import Cookies from 'js-cookie'
 import useProductStore from '@/store/products/page'
 import { ToastContainer } from 'react-toastify'
+import Link from 'next/link'
 
 function Index() {
   const [aboutactive, setAboutActive] = useState('Texnoark haqida')
@@ -24,12 +25,16 @@ function Index() {
       <div>
     <Container>
       <p className="flex gap-[10px] mt-[20px]">
+        <Link href={"/"}>
         <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
           Home
         </span>
+        </Link>
+        <Link href={"/categories"}>
         <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
           Smartfonlar
         </span>
+        </Link>
         <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
         Tashkilot haqida
         </span>

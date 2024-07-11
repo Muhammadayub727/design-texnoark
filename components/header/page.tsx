@@ -10,10 +10,10 @@ import {
   CloseSquareOutlined,
   HeartOutlined,
   MenuOutlined,
-  PhoneOutlined,
+  // PhoneOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
-  UnorderedListOutlined,
+  // UnorderedListOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import "./style.css";
@@ -123,7 +123,9 @@ function Index() {
         <Container>
           <div className="flex justify-between items-center">
             <ul className="flex items-center gap-[20px]">
-              <li className="text-[14px] font-medium cursor-pointer">About</li>
+              <Link href={"/about"}>
+                <li className="text-[14px] font-medium cursor-pointer">About</li>
+              </Link>
               <li className="text-[14px] font-medium cursor-pointer">
                 Delivery
               </li>
@@ -171,7 +173,7 @@ function Index() {
                 {open ? (
                   <CloseSquareOutlined className=" text-[18px]" />
                 ) : (
-                  <UnorderedListOutlined className=" text-[18px] rotate-180" />
+                  <MenuOutlined  className=" text-[18px] rotate-180" />
                 )}
                 {open ? "close" : "Category"}
               </Button>

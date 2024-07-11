@@ -7,15 +7,16 @@ import { Radio } from "antd";
 import "./style.css";
 import useProductStore from "@/store/products/page";
 import { ToastContainer } from "react-toastify";
+import Link from "next/link";
 
 function Index() {
-  const [slide1, setSlide1] = useState(1000000); // Default value in millions
-  const [slide2, setSlide2] = useState(51000000); // Default value in millions
+  const [slide1, setSlide1] = useState(3000000); // Default value in millions
+  const [slide2, setSlide2] = useState(13000000); // Default value in millions
 
   // Function to convert slider values from million range to 0-100 range and vice versa
   const convertToSliderValue = (value: any) =>
-    Math.round((value - 1000000) / 90000);
-  const convertToMillionValue = (value: any) => value * 500000 + 1000000;
+    Math.round((value - 3000000) / 100000);
+  const convertToMillionValue = (value: any) => value * 100000 + 3000000;
   const [open, setOpen] = useState(false);
 
   const onChange = (value:any) => {
@@ -46,9 +47,11 @@ function Index() {
       <ToastContainer/>
       <Container>
         <p className="flex gap-[20px] mt-[20px]">
-          <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
-            Home
-          </span>
+          <Link href={"/"}>
+            <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
+                Home
+              </span>
+          </Link>
           <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
             Smartfonlar
           </span>
@@ -65,19 +68,19 @@ function Index() {
           <div className="flex gap-[48px] justify-between">
             <div className="w-[356px] h-[1467px] rounded-[10px] bg-[white] p-[40px] max-md:hidden">
               <p className="flex gap-2 items-center mb-[20px]">
-                <span className="font-bold text-[24px]">Narx</span>
-                <span className="text-[18px] ">(Somda)</span>
+                <span className="font-bold text-[24px]">Price</span>
+                <span className="text-[18px] ">(Soums)</span>
               </p>
 
               <div className="flex justify-between mb-[20px]">
                 <div className="w-[136px]">
-                  <p className="text-[#240E00CC] text-[12px]">...dan</p>
+                  <p className="text-[#240E00CC] text-[12px]">...from</p>
                   <p className="w-full h-[54px] py-[14px] px-[28px] bg-[#F0F0F0] rounded-md text-[18px] text-[#240E00] font-medium">
                     {slide1.toLocaleString()}
                   </p>
                 </div>
                 <div className="w-[136px]">
-                  <p className="text-[#240E00CC] text-[12px]">...gacha</p>
+                  <p className="text-[#240E00CC] text-[12px]">...up to</p>
                   <p className="w-full h-[54px] py-[14px] px-[28px] bg-[#F0F0F0] rounded-md text-[18px] text-[#240E00] font-medium">
                     {slide2.toLocaleString()}
                   </p>
