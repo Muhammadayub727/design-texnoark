@@ -53,7 +53,7 @@ function Index() {
               </span>
           </Link>
           <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
-            Smartfonlar
+            smartphone
           </span>
         </p>
       </Container>

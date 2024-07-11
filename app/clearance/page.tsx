@@ -39,7 +39,7 @@ function page() {
             Home
           </span>
           <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
-            Smartfonlar
+            smartphone
           </span>
           <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
             Xaridni rasmiylashtirish

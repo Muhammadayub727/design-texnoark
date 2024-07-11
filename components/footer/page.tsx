@@ -37,7 +37,7 @@ function page() {
                     <ul className='mt-[20px]'>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Telivizorlar</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Noutbook va Kompuyetrlar</li>
-                        <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Smartfonlar</li>
+                        <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>smartphone</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Kir yuvish mashinasi</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Refrigeratoralar</li>
                         <li className='text-[14px] font-medium text-[#240E0099] mb-[16px] hover:text-[blue] cursor-pointer'>Kondetsioner</li>
