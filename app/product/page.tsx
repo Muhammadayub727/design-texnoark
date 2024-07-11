@@ -290,11 +290,11 @@ function Product() {
                             <Button htmlType="submit" className="single_btn" style={{width: '120px', display: 'flex'}}>Sending</Button>
                        </Form>
                       </div>
-                      <div className="flex flex-col gap-[20px] mt-[40px] mb-[50px] bg-[#fff]" style={{ overflowY: 'auto', maxHeight: '400px' }}>
+                      <div className="flex flex-col gap-[20px] mt-[40px] mb-[50px] " style={{ overflowY: 'auto', maxHeight: '400px' }}>
                           {commets.slice(0, 25).map((e: any, i: number) => {
                             return (
-                              <div key={i} className="w-[100%] bg-white py-[30px] px-[40px] rounded-xl flex gap-[50px] items-start">
-                                <div className="w-[15%]">
+                              <div key={i} className="w-[100%] bg-white py-[30px] px-[40px] rounded-xl flex gap-[50px] items-start max-sm:flex-col">
+                                <div className="w-[15%] ">
                                   <Tooltip title={`${e?.user_id?.last_name} ${e?.user_id?.first_name}`} placement="top">
                                     <Avatar
                                       className="w-[60px] h-[60px]"
@@ -308,6 +308,7 @@ function Product() {
                                   <p className="font-medium text-[#240E00CC] text-[16px] max-sm:text-[13px]">{e?.comment}</p>
                                 </div>
                               </div>
+
                             );
                           })}
                         </div>

@@ -160,14 +160,14 @@ fieldProps={{
 />
 </div>
 <div className="flex flex-col gap-[10px]">
+<Link href={'/login'} className="w-full">
+<p className="text-[14px] font-medium text-[#240E00CC] mb-[5px]">
+You are sign in?
+</p>
+</Link>
 <Button htmlType="submit" className="auth_btn h-[52px] bg-[#D55200] text-[white] font-medium text-[17px]">
 SignUp
 </Button>
-<Link href={'/login'} className="w-full">
-<Button className="auth_btn2 h-[52px] w-full bg-[#F0F0F0] text-[black] font-medium text-[17px]">
-Enter
-</Button>
-</Link>
 </div>
 </Form>
 </div>

@@ -108,18 +108,18 @@ function page() {
                   }}
                 />
               </div>
+              <Link href={'/register'}>
+                <div className="flex flex-col gap-[10px]">
+                    <p className="text-[14px] font-medium text-[#240E00CC] mb-[15px] ">
+                    You are registered?
+                  </p>
+                </div>
+              </Link>
               <div className="flex flex-col gap-[10px]">
                   <Button htmlType="submit" className="auth_btn h-[52px] bg-[#D55200] text-[white] font-medium text-[17px]">
                   Signin
                 </Button>
               </div>
-              <Link href={'/register'}>
-                <div className="flex flex-col gap-[10px]">
-                    <Button htmlType="submit" className="auth_btn h-[52px] bg-[#ccc] text-[white] mt-[10px] font-medium text-[17px]">
-                    Signup
-                  </Button>
-                </div>
-              </Link>
             </Form>
           </div>
         </Container>
