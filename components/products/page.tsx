@@ -59,14 +59,14 @@ function page({ datas }: any) {
           width={100}
           height={100}
           alt="IMG"
-          className="w-[150px] h-[160px] mx-auto max-sm:w-[80px] max-sm:h-[80px] max-sm:object-cover bg-transparent"
+          className="w-[150px] h-[200px] mx-auto max-sm:w-[80px] max-sm:h-[80px] max-sm:object-cover bg-transparent"
         />
         <p className="mt-[36px] text-[16px] mb-[16px] max-sm:mt-[5px] max-sm:text-[14px] max-sm:mb-[2px]">
           {datas.name}
         </p>
-        <h4 className="font-bold text-[18px] max-sm:text-[16px]">{datas.price} so‘m</h4>
+        <h4 className="font-bold text-[18px] max-sm:text-[16px]">{datas.price} soums</h4>
         <p className="text-[#1EB91E] mt-[11px] mb-[19px] bg-[#1EB91E14] inline-block py-2 px-4 rounded-lg max-sm:text-[14px]">
-          {number} so’mdan/12 oy
+          {number} soums/12 month
         </p>
       </Link>
       <div className="flex max-sm:flex-col items-center justify-between gap-[10px]">
