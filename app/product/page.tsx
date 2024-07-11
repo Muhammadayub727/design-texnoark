@@ -50,8 +50,8 @@ function Product() {
     setDetail(response?.data?.data?.product_detail);
     setProduct(response?.data?.data?.product);
   
-    if (response?.data?.data?.product?.assets) {
-      let arr = response.data?.data?.product?.assets?.map((e:any) => ({
+    if (response?.data?.data?.product?.images) {
+      let arr = response.data?.data?.product?.images?.map((e:any) => ({
         original: e,
         thumbnail: e
       }));
