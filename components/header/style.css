@@ -52,6 +52,13 @@
   border: none;
 }
 
+/* Style the placeholder text */
+.search_inputt::placeholder {
+  font-size: 12px; /* Adjust the font size */
+  color: #888; /* Adjust the color */
+  font-weight: normal; /* Adjust the font weight */
+}
+
 .card:hover .rasm > svg > path {
   fill: #ffff !important; /* Change this to the desired color */
 }

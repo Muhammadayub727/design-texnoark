@@ -178,7 +178,7 @@ function Index() {
                 {open ? "close" : "Category"}
               </Button>
               <Input
-                placeholder="Хочу купить..."
+                placeholder="I want to buy..."
                 className="search_input"
                 prefix={<SearchOutlined />}
               />
