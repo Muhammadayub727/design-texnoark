@@ -65,6 +65,7 @@
 // }
 
 // export default CardComponent;
+"use client"
 
 import { DeleteOutlined, HeartOutlined } from '@ant-design/icons';
 import React, { useEffect, useState } from 'react';
