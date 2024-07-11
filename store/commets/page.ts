@@ -15,7 +15,7 @@ const useCommentStore = create <Commets_request> ((set) => ({
     postCommets: async (data) => {
         try{
             const response = await http.post(`/comment/create`, data);
-            console.log(response);
+            // console.log(response);
             set((state) => {
                 return {
                     commets: [...state.commets, response?.data?.data],

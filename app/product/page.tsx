@@ -46,7 +46,7 @@ function Product() {
     const product_id = Number(Cookies.get('product_id'));
     
     const response = await getProductsId({ id: product_id });
-    console.log(response)
+    // console.log(response)
     setDetail(response?.data?.data?.product_detail);
     setProduct(response?.data?.data?.product);
   
@@ -66,7 +66,7 @@ function Product() {
   },[])
 
   const renderCustomImage = (item:any) => {
-    console.log(item)
+    // console.log(item)
     return (
       <div className="image-gallery-image">
         <Image 

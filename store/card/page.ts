@@ -15,7 +15,7 @@ const useCartsStore = create <Carts_request>  ((set) => ({
         }
     },
     postCards: async (props) => {
-        console.log(props);
+        // console.log(props);
         try{
             const response = await http.post(`/carts/create`, props);
             return response

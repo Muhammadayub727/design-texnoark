@@ -20,7 +20,7 @@ function page({ datas }: any) {
 
   async function handleCartSubmit(id: number) {
     const response = await postCards({ product_id: id });
-    console.log("Cart response:", response);
+    // console.log("Cart response:", response);
     if (response?.status === 201) {
       await getCards({ id: Number(Cookies.get('id')) });
       toast.success('Product cart add');
@@ -36,7 +36,7 @@ function page({ datas }: any) {
       // Check if response is defined and has a status property
       if (response && response.status === 201) {
         await getlikes({ id: Number(Cookies.get('id')) });
-        console.log(Cookies.get("id"));
+        // console.log(Cookies.get("id"));
         toast.success('Like successful');
       } else {
         // Handle case when response is defined but status is not 201
@@ -44,12 +44,12 @@ function page({ datas }: any) {
       }
     } catch (error) {
       // Handle case when an error is thrown (e.g., network error)
-      console.error('Error liking post:', error);
+      // console.error('Error liking post:', error);
       toast.error('An error occurred while liking the post.');
     }
   }
 
-  console.log(Cookies.get("id"));
+  // console.log(Cookies.get("id"));
 
   return (
     <div className="w-[305px] h-[490px] pt-[50px] pb-[36px] px-[30px] bg-white rounded-xl max-sm:w-[168px] max-sm:h-[320px] max-sm:p-[5px]">

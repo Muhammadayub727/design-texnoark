@@ -18,7 +18,7 @@ const uselikestore = create <likes_request> ((set) => ({
     postlikes: async ({ product_id }) => {
         try{
             const response = await http.post(`/likes/create`, { product_id });
-            console.log({ product_id })
+            // console.log({ product_id })
             return response
         }catch(err){
             console.log(err);

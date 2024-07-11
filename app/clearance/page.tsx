@@ -16,7 +16,7 @@ function page() {
   const { products, getProducts } = useProductStore()
   const [selectRadio, setSelectRadio] = useState(false)
   async function handleSubmit(value: any) {
-    console.log(value);
+    // console.log(value);
   }
 
   useEffect(() => {

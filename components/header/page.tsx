@@ -95,7 +95,7 @@ function Index() {
     const id = Number(Cookies.get("id"));
     getlikes({ id });
     getCards({ id });
-  });
+  },[]);
 
   const menu = (
     <Menu>

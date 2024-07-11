@@ -7,6 +7,7 @@ import useCartsStore from '@/store/card/page';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import useLikeStore from '@/store/liked/page';
+import Image from 'next/image';
 
 function Page({datas}:any) {
     const [count, setCount] = useState(1);
@@ -37,7 +38,7 @@ function Page({datas}:any) {
 
     return (
         <div className='product-card justify-between'>
-            <img className='product-image' src={datas?.product_id?.images[0]} alt={datas.product_id} />
+            <Image className='product-image' src={datas?.product_id?.images[0]} alt={datas.product_id} width={100} height={100} />
             <div className='product-details'>
                 <p className='product-title'>{datas?.product_id?.name}</p>
                 <div className='quantity-controls'>

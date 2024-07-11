@@ -16,7 +16,7 @@ const useProductStore = create<request_products>((set) => ({
     getProductsId: async ({ id }) => {
         try {
             const response = await http.get(`/products/${id}`);
-            console.log(id)
+            // console.log(id)
             return response;
         } catch (err) {
             console.log(err);

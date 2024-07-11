@@ -11,7 +11,6 @@ interface postlikes{
 }
 
 
-
 export interface likes_request{
     likes: likesData[]
     count: number

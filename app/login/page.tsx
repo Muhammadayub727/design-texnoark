@@ -28,7 +28,7 @@ function page() {
     const response = await login(value)
     if(response?.status == 201){
       toast.success('login successful')
-      console.log(response);
+      // console.log(response);
       saveAccessToken(response?.data?.data?.tokens?.access_token)
       Cookies.set('id', response?.data?.data?.data?.id)
       setTimeout(() => {
