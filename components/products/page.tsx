@@ -23,7 +23,7 @@ function page({ datas }: any) {
     console.log("Cart response:", response);
     if (response?.status === 201) {
       await getCards({ id: Number(Cookies.get('id')) });
-      toast.success('Product ');
+      toast.success('Product cart add');
     } else {
       toast.error('Product added to cart failed. You need to signin.');
     }
