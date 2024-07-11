@@ -1,20 +1,20 @@
-interface likedData{
+interface likesData{
 
 }
 
-interface getliked{
+interface getlikes{
     id: number
 }
 
-interface postliked{
+interface postlikes{
     product_id: number
 }
 
 
 
-export interface liked_request{
-    liked: likedData[]
+export interface likes_request{
+    likes: likesData[]
     count: number
-    getliked: (id: getliked) => any
-    postliked: (id: postliked) => any
+    getlikes: (id: getlikes) => any
+    postlikes: (id: postlikes) => any
 }

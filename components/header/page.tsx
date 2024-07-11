@@ -30,7 +30,7 @@ import Refrigerator from "@/assets/muzlatgich.svg";
 import { getAccessToken } from "@/helpers/auth-helpers";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import uselikedtore from "@/store/liked/page";
+import uselikestore from "@/store/liked/page";
 import useProductStore from "@/store/products/page";
 import Cookies from "js-cookie";
 import useCartsStore from "@/store/card/page";
@@ -56,7 +56,7 @@ function Index() {
   ];
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
-  const { count, getliked } = uselikedtore();
+  const { count, getlikes } = uselikestore();
   const { countCarts, getCards } = useCartsStore();
 
   async function getSub(e: any) {
@@ -93,7 +93,7 @@ function Index() {
     getCategories();
     getProducts();
     const id = Number(Cookies.get("id"));
-    getliked({ id });
+    getlikes({ id });
     getCards({ id });
   }, []);
 
@@ -237,7 +237,7 @@ function Index() {
             </div>
             <div className="flex items-center gap-[15px]">
               <Badge className=" max-lg:hidden" count={count}>
-                <Link href={"/liked"}>
+                <Link href={"/likes"}>
                   <Avatar
                     shape="square"
                     size="large"

@@ -1,23 +1,23 @@
 import { create } from "zustand";
 import http from "../../api/interseptor";
-import { liked_request } from "@/interfaces/likes";
+import { likes_request } from "@/interfaces/likes";
 
-const uselikedtore = create <liked_request> ((set) => ({
-    liked: [],
+const uselikestore = create <likes_request> ((set) => ({
+    likes: [],
     count: 0,
-    getliked: async ({id}) => {
+    getlikes: async ({id}) => {
         try{
-            const response = await http.get(`/liked/user/liked/${id}`);
-            set({ liked: response?.data?.data?.liked});
+            const response = await http.get(`/likes/user/likes/${id}`);
+            set({ likes: response?.data?.data?.likes});
             set({ count: response?.data?.data?.count})
             // console.log("res",response)
         }catch(err){
             console.log(err);
         }
     },
-    postliked: async ({ product_id }) => {
+    postlikes: async ({ product_id }) => {
         try{
-            const response = await http.post(`/liked/create`, { product_id });
+            const response = await http.post(`/likes/create`, { product_id });
             console.log({ product_id })
             return response
         }catch(err){
@@ -26,4 +26,4 @@ const uselikedtore = create <liked_request> ((set) => ({
     }
 }));
 
-export default uselikedtore;
+export default uselikestore;

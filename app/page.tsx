@@ -17,7 +17,7 @@ import AirConditioner from '@/assets/konditseoner.svg';
 import Link from 'next/link';
 import useProductStore from '@/store/products/page';
 import { ToastContainer } from 'react-toastify';
-import uselikedtore from '@/store/liked/page';
+import uselikestore from '@/store/liked/page';
 import Cookies from 'js-cookie';
 import ProductImages from "./animation/page"
 
@@ -28,14 +28,14 @@ export default function Home() {
   const {categories, getCategories} = useCategoryStore()
   const iconCategory = [ProductOnSale, Smartphone, WashingCard, Desktop, AirConditioner]
   const {products, getProducts} = useProductStore()
-  const {getliked} = uselikedtore()
+  const {getlikes} = uselikestore()
 
 
   useEffect(() =>{
     getCategories()
     getProducts()
     const id = Number(Cookies.get('id'))
-    getliked({id})
+    getlikes({id})
   }, [])
   return (
     <>
