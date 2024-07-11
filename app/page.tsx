@@ -19,6 +19,7 @@ import useProductStore from '@/store/products/page';
 import { ToastContainer } from 'react-toastify';
 import uselikedtore from '@/store/liked/page';
 import Cookies from 'js-cookie';
+import ProductImages from "./animation/page"
 
 
 
@@ -108,9 +109,11 @@ export default function Home() {
            </div>
         </Container>
       </div>  
+  
 
       <div className='mt-[67px]'>
         <Container>
+          <ProductImages/>
           <div>
             <Image src={Footer_Banner} alt='Banner'/>
           </div>
