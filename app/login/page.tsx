@@ -113,6 +113,13 @@ function page() {
                   Signin
                 </Button>
               </div>
+              <Link href={'/register'}>
+                <div className="flex flex-col gap-[10px]">
+                    <Button htmlType="submit" className="auth_btn h-[52px] bg-[#ccc] text-[white] mt-[10px] font-medium text-[17px]">
+                    Signup
+                  </Button>
+                </div>
+              </Link>
             </Form>
           </div>
         </Container>

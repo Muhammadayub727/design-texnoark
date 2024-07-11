@@ -20,10 +20,10 @@ function CardComponent({ datas }: any) {
   async function handleDelete(id: number) {
     const response = await deleteCards({ id });
     if (response?.status == 200) {
-      toast.success('Card delete');
+      toast.success('Card deleted');
       await getCards({ id: Number(Cookies.get('id')) });
     } else {
-      toast.error('Cards deletion failed');
+      toast.error('Card deletion failed');
     }
   }
 
@@ -55,6 +55,7 @@ function CardComponent({ datas }: any) {
       </div>
       <div className='product-actions'>
         <div className='action-icons'>
+          <span className='product-price float-left '>{`${datas?.product_id?.price} so'm`}</span>
           <span onClick={() => handleDelete(datas?.id)} className='action-icon mt-[100px]'><DeleteOutlined className='icon' /></span>
           <span onClick={() => handleLike(datas?.product_id?.id)} className='action-icon mt-[100px]'><HeartOutlined className='icon' /></span>
         </div>
