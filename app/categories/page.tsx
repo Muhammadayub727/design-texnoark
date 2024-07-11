@@ -100,7 +100,7 @@ function Index() {
               />
 
               <div>
-                <h2 className="font-bold  text-[24px]">Brendlar</h2>
+                <h2 className="font-bold  text-[24px]">Brands</h2>
                 <Radio.Group defaultValue="Samsung" className="flex flex-col gap-[7px] mt-[12px]">
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="Samsung">Samsung</Radio>
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="Artel">Artel</Radio>
@@ -112,7 +112,7 @@ function Index() {
                 </Radio.Group>
               </div>
               <div className="mt-[24px]">
-                <h2 className="font-bold  text-[24px]">Tezkor xotira RAM</h2>
+                <h2 className="font-bold  text-[24px]">RAM</h2>
                 <Radio.Group defaultValue="2" className="flex flex-col gap-[7px] mt-[12px]">
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="2">2 GB</Radio>
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="3">3 GB</Radio>
@@ -124,7 +124,7 @@ function Index() {
                 </Radio.Group>
               </div>
               <div className="mt-[24px]">
-                <h2 className="font-bold  text-[24px]">Doiymi xotira ROM</h2>
+                <h2 className="font-bold  text-[24px]">ROM</h2>
                 <Radio.Group defaultValue="32" className="flex flex-col gap-[7px] mt-[12px]">
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="32">32 GB</Radio>
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="64">64 GB</Radio>
@@ -135,7 +135,7 @@ function Index() {
                 </Radio.Group>
               </div>
               <div className="mt-[24px]">
-                <h2 className="font-bold  text-[24px]">Akkumulyator hajmi</h2>
+                <h2 className="font-bold  text-[24px]">Accumlator</h2>
                 <Radio.Group defaultValue="3000" className="flex flex-col gap-[7px] mt-[12px]">
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="3200">3200 mAh</Radio>
                   <Radio className="text-[18px]  text-[#240E00CC] font-medium" value="3600">3600 mAh</Radio>
@@ -162,19 +162,19 @@ function Index() {
       <Drawer title="Basic Drawer" width={'100vw'} onClose={onClose} open={open}>
         <div className="w-[100%] h-[1467px] rounded-[10px] bg-[white] p-[40px]">
                 <p className="flex gap-2 items-center mb-[20px]">
-                  <span className="font-bold text-[24px]">Narx</span>
-                  <span className="text-[18px] ">(Somda)</span>
+                  <span className="font-bold text-[24px]">Price</span>
+                  <span className="text-[18px] ">(Soums)</span>
                 </p>
 
                 <div className="flex justify-between mb-[20px]">
                   <div className="w-[136px]">
-                    <p className="text-[#240E00CC] text-[12px]">...dan</p>
+                    <p className="text-[#240E00CC] text-[12px]">...from</p>
                     <p className="w-full h-[54px] py-[14px] px-[28px] bg-[#F0F0F0] rounded-md text-[18px] text-[#240E00] font-medium">
                       {slide1.toLocaleString()}
                     </p>
                   </div>
                   <div className="w-[136px]">
-                    <p className="text-[#240E00CC] text-[12px]">...gacha</p>
+                    <p className="text-[#240E00CC] text-[12px]">...up to</p>
                     <p className="w-full h-[54px] py-[14px] px-[28px] bg-[#F0F0F0] rounded-md text-[18px] text-[#240E00] font-medium">
                       {slide2.toLocaleString()}
                     </p>
