@@ -20,6 +20,9 @@ import { ToastContainer } from 'react-toastify';
 import uselikestore from '@/store/liked/page';
 import Cookies from 'js-cookie';
 import ProductImages from "./animation/page"
+import ProductImages2 from "./animation/index"
+
+
 
 
 
@@ -114,6 +117,8 @@ export default function Home() {
       <div className='mt-[67px]'>
         <Container>
           <ProductImages/>
+          <ProductImages2/>
+
           <div>
             <Image src={Footer_Banner} alt='Banner'/>
           </div>

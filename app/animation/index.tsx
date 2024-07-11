@@ -9,16 +9,16 @@ import Vivo from '@/assets/vivo.png';
 
 const AnimatedImage = animated(Image);
 
-function ProductImages() {
+function ProductImages2() {
   const props = useSpring({
     loop: true,
-    from: { transform: 'translateX(-100%)' },
-    to: { transform: 'translateX(100%)' }, 
+    from: { transform: 'translateX(100%)' },
+    to: { transform: 'translateX(-100%)' }, 
     config: { duration: 5000 }
   });
 
   return (
-    <div className='mb-[10px] flex'>
+    <div className='mb-[40px] flex'>
       <animated.div style={props} className='w-[250px] h-[100px] bg-[#fff] rounded-[5px] ml-[20px] mt-[10px]'>
         <AnimatedImage alt='Huawei' src={Huawei} className='w-[70px] h-[40px] ml-[90px] mt-[30px]' />
       </animated.div>
@@ -38,4 +38,4 @@ function ProductImages() {
   );
 }
 
-export default ProductImages;
+export default ProductImages2;
