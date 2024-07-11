@@ -14,7 +14,7 @@ function ProductImages() {
     loop: true,
     from: { transform: 'translateX(-100%)' },
     to: { transform: 'translateX(100%)' }, 
-    config: { duration: 5000 }
+    config: { duration: 3000 }
   });
 
   return (
