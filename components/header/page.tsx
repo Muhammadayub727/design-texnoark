@@ -102,7 +102,7 @@ function Index() {
       <Menu.Item key="1">
         <Link href="/login">
           <Button className="dropdown_btn bg-[#D55200] w-[100%] text-white text-[14px] font-bold py-[10px] px-[36px] h-[36px]">
-            login
+            signin
           </Button>
         </Link>
       </Menu.Item>

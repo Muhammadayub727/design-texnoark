@@ -37,7 +37,7 @@ function Page({datas}:any) {
 
     return (
         <div className='product-card justify-between'>
-            <Image className='product-image' src={datas?.product_id?.images[0]} alt={datas.product_id} />
+            <Image className='product-image' src={datas?.product_id?.images[0]} alt={datas.product_id}  width={100} height={100}/>
             <div className='product-details'>
                 <p className='product-title'>{datas?.product_id?.name}</p>
                 <div className='quantity-controls'>

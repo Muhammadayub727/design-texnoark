@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import http from "../../api/interseptor";
-import { liked_request } from "@/interfaces/liked";
+import { liked_request } from "@/interfaces/likes";
 
 const uselikedtore = create <liked_request> ((set) => ({
     liked: [],
@@ -15,18 +15,15 @@ const uselikedtore = create <liked_request> ((set) => ({
             console.log(err);
         }
     },
-    postliked: async (id) => {
+    postliked: async ({ product_id }) => {
         try{
-            const response = await http.post(`/liked/create`, id);
-            console.log(id)
+            const response = await http.post(`/liked/create`, { product_id });
+            console.log({ product_id })
             return response
         }catch(err){
             console.log(err);
         }
     }
 }));
-
-
-
 
 export default uselikedtore;

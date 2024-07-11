@@ -13,32 +13,39 @@ import Cookies from "js-cookie";
 import useCartsStore from "@/store/card/page";
 import Image from "next/image";
 
-
 function page({ datas }: any) {
   const number = Math.ceil(datas.price / 12);
   const { postliked, getliked } = uselikedtore();
   const { postCards, getCards } = useCartsStore();
 
-
   async function handleCartSubmit(id: number) {
     const response = await postCards({ product_id: id });
     console.log("Cart response:", response);
-    if (response?.status == 201) {
+    if (response?.status === 201) {
       await getCards({ id: Number(Cookies.get('id')) });
-      toast.success('Product added to cart successfully');
+      toast.success('Product ');
     } else {
-      toast.error('Product added to cart failed. You need to login.');
+      toast.error('Product added to cart failed. You need to signin.');
     }
   }
 
   async function handleLikePost(id: number) {
-    const response = await postliked({ product_id: id });
-    if (response.status == 201) {
-      await getliked({ id: Number(Cookies.get('id')) });
-      console.log(Cookies.get("id"));
-      toast.success('Like successful');
-    } else {
-      toast.error('Like failed. You need to login.');
+    try {
+      const response = await postliked({ product_id: id });
+
+      // Check if response is defined and has a status property
+      if (response && response.status === 201) {
+        await getliked({ id: Number(Cookies.get('id')) });
+        console.log(Cookies.get("id"));
+        toast.success('Like successful');
+      } else {
+        // Handle case when response is defined but status is not 201
+        toast.error('Like failed. You need to signin.');
+      }
+    } catch (error) {
+      // Handle case when an error is thrown (e.g., network error)
+      console.error('Error liking post:', error);
+      toast.error('An error occurred while liking the post.');
     }
   }
 
