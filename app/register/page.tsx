@@ -26,7 +26,7 @@ function page() {
     if(response?.status == 201){
       toast.success('signup successful')
       setTimeout(() => {
-        router.push('/signin');
+        router.push('/login');
       }, 3000);
     }else{
       toast.error('signup Failed')
@@ -54,7 +54,7 @@ function page() {
         <Container>
           <div className="w-[500px] p-[50px] bg-white rounded-xl mx-auto">
             <h1 className="font-black text-[36px] text-center mb-[36px]">
-              signin
+              login
             </h1>
             <Form onFinish={(value) => handleSubmit(value)}>
              <div>
@@ -163,7 +163,7 @@ function page() {
                   <Button htmlType="submit" className="auth_btn h-[52px] bg-[#D55200] text-[white] font-medium text-[17px]">
                   Ro'yhatdan o'tish
                 </Button>
-                <Link href={'/signin'} className="w-full">
+                <Link href={'/login'} className="w-full">
                 <Button className="auth_btn2 h-[52px] w-full bg-[#F0F0F0] text-[black] font-medium text-[17px]">
                   Kirish
                 </Button>

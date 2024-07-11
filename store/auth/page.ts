@@ -3,7 +3,7 @@ import http from "../../api/interseptor";
 import { Auth_request } from "@/interfaces/auth";
 
 const AuthStore = create <Auth_request> ((set) => ({
-    signin: async (data) => {
+    login: async (data) => {
         try{
             const response = await http.post("/auth/sign-in", data);
             return response

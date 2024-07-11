@@ -29,7 +29,7 @@ function Page({datas}:any) {
             await getliked({id: Number(Cookies.get('id'))})
             toast.success('Like successful')
         } else{
-            toast.error('Like failed You have need signin')
+            toast.error('Like failed You have need login')
         }
     }
 

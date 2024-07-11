@@ -21,13 +21,13 @@ function page() {
     return Promise.reject("Phone Number must start with +998");
   };
 
-  const {signin} = AuthStore();
+  const {login} = AuthStore();
 
 
   async function handleSubmit(value: any){
-    const response = await signin(value)
+    const response = await login(value)
     if(response?.status == 201){
-      toast.success('signin successful')
+      toast.success('login successful')
       console.log(response);
       saveAccessToken(response?.data?.data?.tokens?.access_token)
       Cookies.set('id', response?.data?.data?.data?.id)
@@ -35,7 +35,7 @@ function page() {
         router.push('/')
       }, 3000);
     }else{
-      toast.error('signin Failed')
+      toast.error('login Failed')
     }
   }
 
@@ -44,12 +44,16 @@ function page() {
       <ToastContainer/>
       <Container>
         <p className="flex gap-[20px] mt-[20px]">
+          <Link href={"/"}>
           <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
             Home
           </span>
+          </Link>
+          <Link href={"/categories"}>
           <span className="block px-[18px] py-[6px] rounded bg-[#F5F5F5] text-[#240E0066] font-medium">
             Smartfonlar
           </span>
+          </Link>
           <span className="block px-[18px] py-[6px] rounded bg-[white] font-medium">
             Kirish
           </span>
@@ -60,12 +64,12 @@ function page() {
         <Container>
           <div className="w-[500px] p-[50px] h-[474px] bg-white rounded-xl mx-auto">
             <h1 className="font-black text-[36px] text-center mb-[36px]">
-              signin
+              SignIn
             </h1>
             <Form onFinish={(value) => handleSubmit(value)}>
               <div>
                 <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">
-                  Telfon raqam
+                  Phone Number
                 </p>
                 <ProFormText
                   hasFeedback
@@ -87,7 +91,7 @@ function page() {
               </div>
               <div>
                 <p className="text-[12px] font-medium text-[#240E00CC] mb-[5px]">
-                  Parol
+                  Password
                 </p>
                 <ProFormText.Password
                   hasFeedback
@@ -106,13 +110,8 @@ function page() {
               </div>
               <div className="flex flex-col gap-[10px]">
                   <Button htmlType="submit" className="auth_btn h-[52px] bg-[#D55200] text-[white] font-medium text-[17px]">
-                  Kirish
+                  Signin
                 </Button>
-                <Link href={'/signup'} className="w-full">
-                <Button className="auth_btn2 h-[52px] w-full bg-[#F0F0F0] text-[black] font-medium text-[17px]">
-                  Ro'yhatdan o'tish
-                </Button>
-                </Link>
               </div>
             </Form>
           </div>
