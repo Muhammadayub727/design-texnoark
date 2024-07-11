@@ -28,7 +28,7 @@ import { Rate } from 'antd';
 
 function Product() {
   const [assets, setassets] = useState([]);
-  const [comments, setcommets] = useState("Telfon xususiyatlari");
+  const [comments, setcommets] = useState("Smartphone features");
   const {products, getProductsId} = useProductStore();
   const {getCommets, commets, postCommets} = useCommentStore()
   const [detail, setDetail] = useState({})
@@ -69,7 +69,7 @@ function Product() {
     // console.log(item)
     return (
       <div className="image-gallery-image">
-        <Image 
+        <img
           src={item?.original} 
           alt="Product Image" 
           width={100}
@@ -177,9 +177,9 @@ function Product() {
             <Container>
               <div className="flex gap-[30px] mt-[40px]">
                 <button
-                  onClick={() => setcommets("Telfon xususiyatlari")}
+                  onClick={() => setcommets("Smartphone features")}
                   className={`${
-                    comments == "Telfon xususiyatlari"
+                    comments == "Smartphone features"
                       ? "bg-[#FF6F14] text-white duration-300"
                       : "bg-white text-[black] duration-300"
                   } py-[14px] px-[32px] rounded-[10px font-semibold rounded-[10px]`}
@@ -204,7 +204,7 @@ function Product() {
             <Container>
               <div className="flex justify-between items-start max-lg:flex-col">
                 <div className="w-[820px] max-sm:w-[375px] max-sm:mx-auto">
-                  {comments == "Telfon xususiyatlari" ? (
+                  {comments == "Smartphone features" ? (
                     <div className="py-[60px] px-[80px] max-sm:px-[10px]">
                       <div className="flex justify-between border-b-[3px] border-dashed pb-[11px] pt-[9px]">
                         <p className="w-[200px] text-[18px] font-medium text-[#240E00CC] max-sm:text-[13px]">

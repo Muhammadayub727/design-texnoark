@@ -50,7 +50,8 @@ function page({ datas }: any) {
   }
 
   // console.log(Cookies.get("id"));
-
+  
+  // console.log("salom",datas.images[0])
   return (
     <div className="w-[305px] h-[490px] pt-[50px] pb-[36px] px-[30px] bg-white rounded-xl max-sm:w-[168px] max-sm:h-[320px] max-sm:p-[5px]">
       <Link onClick={() => Cookies.set('product_id', datas.id)} href={'/product'}>
@@ -60,7 +61,7 @@ function page({ datas }: any) {
           height={100}
           alt="IMG"
           className="w-[150px] h-[200px] mx-auto max-sm:w-[80px] max-sm:h-[80px] max-sm:object-cover bg-transparent"
-        />
+          />
         <p className="mt-[36px] text-[16px] mb-[16px] max-sm:mt-[5px] max-sm:text-[14px] max-sm:mb-[2px]">
           {datas.name}
         </p>
