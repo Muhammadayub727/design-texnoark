@@ -120,9 +120,9 @@ export default function page() {
                    }
                 </div>
                   <div className='w-[440px] h-[100%] p-[40px] bg-white rounded-xl max-sm:w-[350px]'>
-                        <h4 className='font-bold text-[24px] mb-[17px] '>Sizni haridlaringiz</h4>
-                        <p className='#240E00CC text-[16px]'>Mahsulotlar: <span className='text-[18px] font-bold mb-[10px] '>6 ta</span></p>
-                        <p className='#240E00CC text-[16px]'>Jami summa: <span className='text-[28px] font-bold '>56 778 678 so‘m</span></p>
+                        <h4 className='font-bold text-[24px] mb-[17px] '>Your purchases</h4>
+                        <p className='#240E00CC text-[16px]'>Products: <span className='text-[18px] font-bold mb-[10px] '>0 ta</span></p>
+                        <p className='#240E00CC text-[16px]'>Summa: <span className='text-[28px] font-bold '>0so‘m</span></p>
                         <Link href={'/clearance'}>
                         <button className='w-[100%]  bg-[#D55200] text-white rounded-md font-medium h-[54px]  mt-[24px]'>Xaridni rasmiylashtirish</button>
                         </Link>

@@ -55,3 +55,13 @@
 .card:hover .rasm > svg > path {
   fill: #ffff !important; /* Change this to the desired color */
 }
+
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white; /* Headerning orqa fon rangini o'zgartiring */
+}
